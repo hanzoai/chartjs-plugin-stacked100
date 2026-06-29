@@ -1,3 +1,5 @@
+<p align="center"><img src=".github/hero.svg" alt="chartjs-plugin-stacked100" width="880"></p>
+
 # chartjs-plugin-stacked100
 
 This plugin for Chart.js that makes your bar chart to 100% stacked bar chart.
