@@ -1,0 +1,20 @@
+# Canonical CI/CD config for hanzoai/chartjs-plugin-stacked100 — the one file
+# both the hanzoai/ci reusable (.hanzo/workflows/cicd.yml) and platform.hanzo.ai
+# read. An npm package (a Chart.js plugin), published from a tag: no image, no
+# deploy.
+#
+# Two halves, both real:
+#   * `yarn test` — the jest suite in src/test, which asserts the actual stacking
+#     arithmetic. This is a plugin whose entire job is turning values into
+#     percentages, so the numbers ARE the contract.
+#   * `yarn type` — emits the declaration files consumers typecheck against. It
+#     is a separate step from the bundle for a reason: vite/webpack strip types
+#     without checking them, so a broken .d.ts ships green otherwise.
+test:
+  - name: build
+    run: |
+      set -e
+      corepack enable
+      yarn install --frozen-lockfile
+      yarn test
+      yarn type
