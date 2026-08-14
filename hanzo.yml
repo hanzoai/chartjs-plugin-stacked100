@@ -1,0 +1,22 @@
+# Canonical CI/CD config for hanzoai/chartjs-plugin-stacked100 — read by the
+# hanzoai/ci reusable (.hanzo/workflows/cicd.yml) and by platform.hanzo.ai.
+#
+# A fork of an upstream Chart.js plugin, consumed as an npm package: no image,
+# so no `images:` and no `deploy:`. One gate, covering what we consume — the
+# linter, the suites, and the bundle the package exports.
+#
+# `dev` is the package's own name for eslint followed by jest; it is spelled
+# out here rather than left to the `prepare` lifecycle hook, which runs the
+# same checks on install and would make the gate an accident of packaging.
+#
+# `--frozen-lockfile` because yarn.lock is committed: without it a resolution
+# that drifted from the lockfile passes here and breaks for whoever installs.
+
+test:
+  - name: lint-and-test
+    run: |
+      set -euo pipefail
+      yarn install --frozen-lockfile
+      yarn dev
+  - name: build
+    run: yarn build
