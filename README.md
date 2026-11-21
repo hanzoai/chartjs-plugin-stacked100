@@ -2,6 +2,8 @@
 
 # chartjs-plugin-stacked100
 
+[![Open in Hanzo](https://hanzo.app/badges/open-in-hanzo.svg)](https://hanzo.app/dev/open?repo=github.com/hanzoai/chartjs-plugin-stacked100&ref=main&action=open) [![Edit with Hanzo](https://hanzo.app/badges/edit-with-hanzo.svg)](https://hanzo.app/dev/open?repo=github.com/hanzoai/chartjs-plugin-stacked100&ref=main&action=edit) [![Deploy with Hanzo](https://hanzo.app/badges/deploy-with-hanzo.svg)](https://hanzo.app/dev/open?repo=github.com/hanzoai/chartjs-plugin-stacked100&ref=main&action=deploy)
+
 This plugin for Chart.js that makes your bar chart to 100% stacked bar chart.
 
 Requires **Chart.js v3 or higher**.
